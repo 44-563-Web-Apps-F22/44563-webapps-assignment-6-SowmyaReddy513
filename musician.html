@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Musician Page</title>
+
+    <link href="./musician.css" rel="stylesheet">
+</head>
+<html>
+ 
+<body>
+
+<h2>Musician guess by Sowmya Reddy Bodlapati</h2>
+
+<hr>
+<center>
+<div class="card-form">
+<form>
+    <div class="form-body">
+        <div class="row">
+    <label for="musician_name">Enter the secret musician name</label>
+    <input type ="password" id="musician_name_1" name="musician_name_1" min=10 max=50 step=2 value="John Lennon"> <br>
+
+    <label for="guess_musi">Guess the musician</label>
+    <input type ="text" id="guess_musi" name="guess_musi" autofocus> <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+</div>
+</div>
+</form>
+
+
+
+
+<p id="result">Resulted Counter</p>
+</div>
+</center>
+
+<script> 
+    var correct = 0
+    var  wrong = 0
+function checkGuess(){
+    
+    console.log("Getting form values")
+    musi_name = document.getElementById("musician_name_1").value
+    guess_name = document.getElementById("guess_musi").value
+
+    out = document.getElementById("result")
+    if(musi_name === guess_name){
+        correct = correct +1;
+        out.innerHTML = "Correct - " + correct + " Wrong - " + wrong
+        confirmed = confirm("You got it right")
+    }
+    else{
+        wrong = wrong +1;
+        out.innerHTML = "correct - " + correct + " Wrong - " + wrong
+        confirmed = confirm("Wrong Musician")
+    }
+    
+    
+    // out = document.getElementById("result")
+    // if(confirmed){
+    //     out.innerHTML = "Values were confirmed"
+    // } else {
+    //     out.innerHTML = "Values were not confirmed"
+    // }
+}
+</script>
+
+</body>
+</html> 
