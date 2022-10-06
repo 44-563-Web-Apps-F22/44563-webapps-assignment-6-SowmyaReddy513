@@ -1,0 +1,30 @@
+.login-page {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-left: 360px;
+    background-color: deeppink;
+}
+
+h1{
+    text-align: center;
+    color: lightcoral;
+}
+
+.btn{
+    background-color: #6C757D;
+    outline: none;
+    border: 0px;
+    padding-left: 10px;
+     box-shadow: none;
+}
+
+.btn:hover, .btn:focus, .btn:active{
+    background-color: #d83b3b;
+    outline: none !important;
+    border: none !important;
+     box-shadow: none;
+}
