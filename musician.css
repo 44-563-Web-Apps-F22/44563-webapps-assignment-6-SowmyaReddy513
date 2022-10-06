@@ -24,28 +24,41 @@ h2{
     padding: 10px;
 }
 input[type="text"]{
-    appearance: none;
-    width: 50%;
+    width: 30%;
     margin: 5px 30px;
-    height: 15px;
-    padding: 5px 15px;
+    height: 30px;
+    padding: 0px 15px;
     border-radius: 5px;
     outline: none;
     border: none;
+    margin-left: 250px;
     background: #e8ebed;
     color: #576366;
     font-size: 14px;
   }
   input[type="password"]{
     appearance: none;
-    width: 50%;
-    margin: 0 15px;
-    height: 15px;
+    width: 30%;
+    margin: 5px 15px;
+    height: 30px;
     padding: 5px 15px;
     border-radius: 5px;
     outline: none;
     border: none;
+    margin-left: 250px;
     background: #e8ebed;
     color: #576366;
     font-size: 14px;
   }
+
+input[type="button"]{
+  width: auto;
+  padding-left: 10px;
+  margin-top: 50px;
+  margin-left: -200px;
+}
+
+.image{
+  align-content: center;
+  margin-left: 200px;
+}
