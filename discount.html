@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
+    <title>Discount Page</title>
+</head>
+
+<body>
+    <center>
+        <h1>computes discounts by Sowmya Reddy Bodlapati</h1>
+        <hr>
+
+        <form>
+            <label for="base">Enter base amount </label>
+            <input type="number" id="base" name="base" min=10 max=50 step=2 value=20> <br><br>
+
+            <label for="perc-val">Enter the discount percentage </label>
+            <input type="number" id="perc-val" name="perc-val" value=10> <br><br>
+            <input type="button" class="btn btn-primary" type="button" onclick="discount()" value="Apply discount">
+        </form>
+        <p id="result">This text will be replaced </p>
+        <script>
+            function discount() {
+                result = ""
+                base = document.getElementById("base").value
+                disc_val = document.getElementById("perc-val").value
+
+                for (let i = 1; i <= 5; i++) {
+                    result = result + " " + ((i * base * disc_val) / 100)
+
+                }
+                out = document.getElementById("result")
+                out.innerHTML = "Discounted amounts for base " + base + " are " + result
+            }
+        </script>
+        <form>
+            <input type="radio" onclick="chooseOp()" id="star" name="star" value="star">
+            <label for="*">*</label><br>
+
+            <input type="radio" onclick="chooseOp()" id="division" name="star" value="divide">
+            <label for="/">/</label><br>
+
+            <input type="radio" onclick="chooseOp()" id="exponent" name="star" value="exponent">
+            <label for="**">**</label><br>
+        </form>
+        <p id="result-1">Opted Results</p>
+        <script>
+            function chooseOp() {
+                base_1 = document.getElementById("base").value
+                exp = document.getElementById("perc-val").value
+                output = document.getElementById("result-1")
+                if (document.getElementById("star").checked) {
+
+                    let value = + base_1 * exp;
+                    output.innerHTML = value
+                }
+                else if (document.getElementById("exponent").checked) {
+                    output.innerHTML = base_1 ** exp
+                }
+
+                else if (document.getElementById("division").checked) {
+                    output.innerHTML = base_1 / exp
+                }
+            }
+
+        </script>
+
+    </center>
+
+</body>
+
+</html>
