@@ -30,6 +30,18 @@
             <input type="button" class="btn btn-primary" type="button" onclick="discount()" value="Apply discount">
         </form>
         <p id="result">This text will be replaced </p>
+
+        <form>
+            <input type="radio" onclick="chooseOp()" id="star" name="star" value="star">
+            <label for="*">*</label><br>
+
+            <input type="radio" onclick="chooseOp()" id="division" name="star" value="divide">
+            <label for="/">/</label><br>
+
+            <input type="radio" onclick="chooseOp()" id="exponent" name="star" value="exponent">
+            <label for="**">**</label><br>
+        </form>
+        <p id="result-1">Opted Results</p>
         <script>
             function discount() {
                 result = ""
@@ -43,19 +55,7 @@
                 out = document.getElementById("result")
                 out.innerHTML = "Discounted amounts for base " + base + " are " + result
             }
-        </script>
-        <form>
-            <input type="radio" onclick="chooseOp()" id="star" name="star" value="star">
-            <label for="*">*</label><br>
 
-            <input type="radio" onclick="chooseOp()" id="division" name="star" value="divide">
-            <label for="/">/</label><br>
-
-            <input type="radio" onclick="chooseOp()" id="exponent" name="star" value="exponent">
-            <label for="**">**</label><br>
-        </form>
-        <p id="result-1">Opted Results</p>
-        <script>
             function chooseOp() {
                 base_1 = document.getElementById("base").value
                 exp = document.getElementById("perc-val").value
