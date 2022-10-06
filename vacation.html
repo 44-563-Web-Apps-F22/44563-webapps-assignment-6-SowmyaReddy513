@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacation Page</title>
+</head>
+
+<body>
+
+    <h1>selects a vacation by Sowmya Reddy Bodlapati</h1>
+
+    <hr>
+
+    <form>
+        <input type="checkbox" id="Air" name="cb1" value="true">
+        <label for="Air">Travel By Air</label><br>
+
+        <input type="checkbox" id="dom" name="cb2" value="true">
+        <label for="dom">Domestic</label><br>
+
+        <input type="checkbox" id="res" name="res" value="false">
+        <label for="res">Resort</label><br><br>
+
+        <input type="button" onclick="selectVacation()" value="Select a vacation">
+    </form>
+
+
+    <p id="result-3">Results will be here...</p>
+
+    <form>
+        <lable for="city">Enter a city</lable>
+        <input type="text" id="city" name="city" value="city"><br>
+
+        <br>
+        <label for="cost">Enter price</label>
+        <input type="text" id="cost" name="cost"><br><br>
+
+        <input type="button" onclick="updateVacation()" value="Update the vacation">
+    </form>
+
+    <p id="Result-4">Results are displayed here</p>
+
+
+    <script>
+        var my_vacation = {}
+
+        output = document.getElementById("result-3")
+
+        function selectVacation() {
+            my_vacation = {}
+            if (document.getElementById("Air").checked == true) {
+                my_vacation["air"] = true
+            }
+            else {
+                my_vacation["air"] = false
+            }
+            if (document.getElementById("dom").checked == true) {
+                my_vacation["domestic"] = true
+            }
+            else {
+                my_vacation["domestic"] = false
+            }
+            if (document.getElementById("res").checked == true) {
+                my_vacation["resort"] = true
+            }
+            else {
+                my_vacation["resort"] = false
+            }
+            output.innerHTML = JSON.stringify(my_vacation)
+        }
+
+        function updateVacation() {
+
+            city_input = document.getElementById("city").value
+            cost_input = document.getElementById("cost").value
+
+            output = document.getElementById("Result-4")
+
+            my_vacation["city"] = city_input
+            my_vacation["price"] = cost_input
+
+            output.innerHTML = JSON.stringify(my_vacation)
+        }
+    </script>
+
+</body>
+
+</html>
